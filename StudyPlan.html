@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Leonard Valentin</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<!--
+					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<h1><strong>I am Leonard</strong>, 22 year old<br />
+					Computer Science student<br />
+					Passionate about creating games</h1>
+					-->
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>StudyPlan</h1>
+							
+						</header>
+						<h2>Motivation</h2>
+						<p>During the fourth semester of my study, it is mandatory to do a practical project. It Counts three times as much as a normal course. 
+							Students can select one of several projects which change each semester and are assigned to a professor to offer guidance and feedback. 
+							I selected the project “better course selection” because I got screwed over by the system in this semester myself. 
+							We got a lot of freedom in how to approach this project just like one would in the real world when working in a company. 
+							After a long time of theory crafting, we settled for two main pillars – implementing a better algorithm when distributing the courses 
+							by allowing prioritization and better usability by introducing drag & drop and making information easily available through modal windows. 
+						</p>
+						
+					</section>
+
+				<!-- Two -->
+					<section id="two">
+						<h2>My Contribution</h2>
+						<p>I did a lot of the heavy lifting for this project. During the initial planning stage, I brought up a lot of ideas like the priority system, 
+							the ability for students to select the maximum of courses they want to end up with to limit the possibility that some people is assigned more courses than they want.  
+							In addition, I also implemented the course selection model for the backend, did the first implementation of the front-end interface for the selection, 
+							added a site for teachers to see wo is in their course, and added a survey model to easily decipher why people picked certain courses. Lastly,
+							 I implemented the course assignment algorithm in collaboration with another team member by peer programming. 
+						</p>
+					
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+						<h2>Implementation</h2>
+						<p>We implemented our project by using the MEVN tech stack which utilizes Vue for the front-end, express and NodeJS for the back-end, and MongoDB for the database. 
+							Vue was the perfect fit because it provided global state and thus reactivity which is very important for a web app which requires drag & drop and thus a constant mutation of data.
+							 In addition, Vue is also easier to learn compared to React which was important because most of our group did not have much experience with JavaScript.
+							  The course selection menu utilizes several linked components which makes reusing them very simple. This was important because each priority row is an independent component. 
+							  If a course is dragged into a priority row another one is automatically instantiated. 
+							  This has the additional benefit of making the priority of each course easily distinguishable and saving the changes to the database. 
+							  The distribution algorithm was realized by utilizing the fact that each JavaScript object is also a dictionary
+							   by creating an object which contains each course as a key and having each priority from one to six as another key inside this object 
+							   and saving each person with their priority to their respective rank in each course. Afterwards each one is shuffled and sorted by priority 
+							   and only the students which the course can contain remain. 
+							   Afterwards a loop removes people from courses with the lowest priority if they have too many courses and redistributes students until saturation is reached.
+							 </p>
+						
+					</section>
+					<section id="four">
+						<h2>Links</h2>
+						<p>If you want to check out the code yourself you can use the following link</p>
+						<a href="https://github.com/modulehandbook/studyplan" >Github</a>
+						<br>
+						<a href="index.html" >Back</a>
+					</section>
+					<!--
+					<ul class="actions">
+						<li><a href="#" class="button">Learn More</a></li>
+					</ul>	
+					-->
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					
+					<ul class="copyright">
+						<li>&copy; 2022 Leonard Valentin</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
