@@ -16,10 +16,12 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
+					<!--
 					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
 					<h1><strong>I am Leonard</strong>, 22 year old<br />
 					Computer Science student<br />
 					Passionate about creating games</h1>
+					-->
 				</div>
 			</header>
 
@@ -29,82 +31,53 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h2>About Me</h2>
+							<h1>Wing IT!</h1>
+							
 						</header>
-						<p>Hey, I am Leonard Valentin. I am a 22-year-old computer science student from Berlin 
-							and currently enrolled at the HTW my fifth semester and looking to finish my degree after my internship. 
-							My main interest in study are game engines, AI, software design, image detection algorithms and backend programming.
-							I am currently looking for an internship as part of my curriculum and to further enhance my knowledge. During my study so far,
-							I completed several projects during course work and extra-curricular which I want to showcase on this site. 
+						<h2>Motivation</h2>
+						<p>In my fourth semester I selected a course called game engines. The main task was to program to games in unity – one 2D game and one 3D game.  
+							After some discussion we quickly settled on a physics game and the ability for two players to play the game. The goal was to pay homage to “Blobby Volley” 
+							which I used to play a lot as a kid with our own aesthetic. 
 						</p>
 						
 					</section>
 
 				<!-- Two -->
 					<section id="two">
-						<h2>My Projects</h2>
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
-								<h3>StudyPlan Web App</h3>
-								<p>StudyPlan is an online tool which aims to help students plan out their study and tries to solve the Problem of course distribution
-									by implementing a priority system so people have a higher chance of getting into courses which interest them more. 
-									The final app got deployed and used this semester to assign courses.
-									
-								</p>
-								
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
-								<h3>Wing IT</h3>
-								<p>Wing IT! Is a two-player local coop game in which two birds try to hone the ball to the other side and thus gaining points. 
-									The game was created in unity as a part of course work where we had to create two complete games ourselves during the semester.
-								</p>
-								
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
-								<h3>Wing IT! TD</h3>
-								<p>WWing IT! TD a tower defense game inspired by Bloons. The player tries to fence off growing waves of enemies by recruiting and upgrading bird warriors. 
-									The game has five different towers which each offer two unique upgrade paths, two levels and three different types of enemies. 
-								</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
-								<h3>Caption Hook</h3>
-								<p>Caption Hook is 2D jump & run made with the unity game engine. The player traverses’ various level by only using the ability of a hook shot.
-									 Each level increases in difficulty and represents a different era of the internet. 
-									 This game was part of a group assignment for the course “advanced game programming”. 
-									 The only direction and constraint given was that we had to create a physics game.
-								</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/05.jpg" class="image fit thumb"><img src="images/thumbs/05.jpg" alt="" /></a>
-								<h3>Number classification Neural Network 
-								</h3>
-								<p>In the fifth semester I selected a machine learning course. In preparation I decided to implement a neural network from scratch in my spare time
-									 by only using python and the NumPy library for the required matrix multiplication. 
-									 I used the MNIST dataset for training and after training the network boasts an accuracy of 97% for the test set.
-								</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/06.jpg" class="image fit thumb"><img src="images/thumbs/06.jpg" alt="" /></a>
-								<h3>Trading Game WIP</h3>
-								<p>Trading Game is a strategy game which plays on a 3D hex grid map. In this game the player controls a trading caravan and can travel between various towns 
-									to buy and sell goods and generate profit by utilizing the price fluctuations between different regions to their advantage. 
-									I am developing this game in my spare time when I don’t have complete university  assignments. </p>
-							</article>
-						</div>
-						<ul class="actions">
-							<li><a href="#" class="button">Full Portfolio</a></li>
-						</ul>
+						<h2>My Contribution</h2>
+						<p>I was the only person in our group who had prior unity experience, so I wanted to lay the foundation for my group members to expand. 
+							I started by implementing the controls and jump physics and adjusted them to have a nice game feeling. 
+							Afterwards I implemented the logic for the ball, scoring and the accompanying interface elements. 
+							Lastly, I also added menus, sound and an indicator see where the ball is when it flies out of camera bounds.
+						</p>
+					
 					</section>
 
 				<!-- Three -->
 					<section id="three">
-						<h2>Get In Touch</h2>
-						<p>If you want to collaborate or just chat feel free to contract me by using any of the provided social links:)</p>
+						<h2>Implementation</h2>
+						<p>The implementation for the jumping controls was straight forward because unity provides a comprehensive built-in physics system. 
+							I added a rigid body and colliders to the playable characters. The more difficult part was adjusting these physics to give a less “floaty” game feel. 
+							I accomplished this by increasing the gravity when falling, applying the jump force as an impulse, 
+							and adding variety in the force in relation to how long the button was pressed. 
+							For the player controls I used the player control package because it added a lot of flexibility for reassigning buttons 
+							and made swapping between keyboard and controller for the second player very easy.
+							I implemented the physics for the ball, with a physics material with a lot of bounciness.
+							In addition, if the ball touches the collider of a player force away from the player is added to the ball. 
+							If the ball touches something with the tag “ground” the opposite player is awarded a point. After the ball is dropped the ball respawns on the losing players side to give the advantage of the first move. I used a coroutine which uses a method callback to make the ball respawn at the selected position after 1.5 seconds so the player can reposition.
+							To implement the menu, I used the unity UI toolkit in conjunction with event functions if the buttons are pressed. 
+							The music and sound are played with an audio manager class which uses a singleton pattern to provide global access. 
+							Nowadays I try to avoid this patten because global mutable state can lead to a lot of problems, but it lends itself well to a small scale game like this.
+							
+							 </p>
 						
+					</section>
+					<section id="four">
+						<h2>Links</h2>
+						<p>If you want to check out the code yourself you can use the following link</p>
+						<a href="https://github.com/powlpaul/htw-ge2-game-1" >Github</a>
+						<br>
+						<a href="index.html" >Back</a>
 					</section>
 					<!--
 					<ul class="actions">
@@ -116,11 +89,7 @@
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://github.com/LennoxCode" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://www.linkedin.com/in/leonard-valentin-467264242/" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
-						<li><a href="mailto:leonard.valentin1999@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
+					
 					<ul class="copyright">
 						<li>&copy; 2022 Leonard Valentin</li>
 					</ul>
