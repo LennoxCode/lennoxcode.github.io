@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Leonard Valentin</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<!--
+					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<h1><strong>I am Leonard</strong>, 22 year old<br />
+					Computer Science student<br />
+					Passionate about creating games</h1>
+					-->
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>Wing IT! TD</h1>
+							
+						</header>
+						<h2>Motivation</h2>
+						<p>The second game we had create was a 3D game. We decided relatively early that the game should be set in the same universe as Wing IT! 
+							Because we all really liked the cute bird art style created by the art department of our group. 
+							I suggested to create a tower defense game because I thought that it would lend itself well to group project because everybody can 
+							create their own tower if the underlying abstraction is implemented well. Additionally, 
+							I liked the idea to turn around the first game by making the balls attack the birds.
+						</p>
+						
+					</section>
+
+				<!-- Two -->
+					<section id="two">
+						<h2>My Contribution</h2>
+						<p>I did a lot of the work for this project. I implemented the base logic for the pathfinding of enemies, the targeting logic and attack pattern of the turrets, the build system, 
+							the interface for the build and upgrade menu, the upgrade system itself, 
+							the spawning systems for enemies, and a tooltip system.
+						</p>
+					
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+						<h2>Implementation</h2>
+						<p>I implemented the building system for the game by evenly spreading cubes with colliders which utilize onClick events to recognize if the player clicks on them. In addition,
+							there is a build class has references to prefabs of the turrets and a reference to the selected turret. if on of the objects is clicked, a turret is selected from the menu,
+							and the player has enough money a turret prefab is instantiated on top of the cube.
+							The enemies are spawned by a Spawner class which uses two nested coroutines to spawn enemies in intervals. 
+							I opted to use the nested functions to make it possible for different enemies to spawn in one wave. Additionally, 
+							I created crated a struct for a spawning scheme which is serializable to be editable in the editor which holds a reference to the enemy prefab and the starting and end wave.
+							 By sampling interpolating the amount of each enemy to spawn according to the start and max round in relation to the current round. 
+							 I implemented the spawning system like this to make it very easy to adjust the difficulty curve or add new enemies because tower defense games have a lot of different parts which are changed so rapid adoption of balance is important. 
+							 The implementation for the enemy AI is very simple. They use predefined waypoints to navigate the level and if the last one is reached the enemy is destroyed thus losing the player one life. 
+							Each bird implements a dual upgrade for the final upgrade which enables the player to make a choice on how to specialize their defenses. To make this simple, intuitive, 
+							and good looking I implemented a tooltip system which triggers after the cursor hovers over an interface element for a certain amount of time.
+							I separated the trigger from the system itself. The system is globally accessible, and the trigger can be added to any interface element which requires a tooltip. 
+							The trigger itself contains a serializable field to easily change the text which should be displayed. Additionally, 
+							I added reworked the system to use layout groups and elements. This functionality provided by unity adjusts the size of interface elements in this group according to the number of present elements. 
+							This abstraction fit well with this use case, because the button for the second upgrade only shows up when it can be selected furthermore layout elements lend themselves to a much cleaner looking interface in the end because the spacing fits better and is even.
+							The targeting logic for the turrets is implemented by iterating through every enemy and picking the closest one in range.
+							Afterwards a prefab is spawned for the bullet which just travels to the enemy and subtracts health if it hits.
+							The different attack patterns of the towers are mostly implemented using if statements in conjunction with the predefined name.
+							I think this implementation leaves a lot to be desired because it does not scale well and makes it too difficult to change turret names.
+							If I would redo this project, I would utilize the command design pattern to better encapsulate the attack logic and creating an AttackPattern class of which the turret holds an implementation. 
+							This would make different attack patterns much easier to exchange and extend.
+							 </p>
+						
+					</section>
+					<section id="four">
+						<h2>Links</h2>
+						<p>If you want to check out the code yourself you can use the following link</p>
+						<a href="https://github.com/powlpaul/htw-ge2-game-2" >Github</a>
+						<br>
+						<a href="index.html" >Back</a>
+					</section>
+					<!--
+					<ul class="actions">
+						<li><a href="#" class="button">Learn More</a></li>
+					</ul>	
+					-->
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					
+					<ul class="copyright">
+						<li>&copy; 2022 Leonard Valentin</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
