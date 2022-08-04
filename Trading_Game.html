@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Leonard Valentin</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<!--
+					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<h1><strong>I am Leonard</strong>, 22 year old<br />
+					Computer Science student<br />
+					Passionate about creating games</h1>
+					-->
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>StudyPlan</h1>
+							
+						</header>
+						<h2>Motivation</h2>
+						<p>Because I very much enjoy game making especially with unity, I wanted to start a project myself to work on when 
+							I don’t have much to for university or during the semester break. 
+							I decided that I wanted to create a strategy game which involves trading because 
+							I enjoy this type of game myself and can imagine how one should play. 
+						</p>
+						
+					</section>
+
+				<!-- Two -->
+					<section id="two">
+						<h2>My Contribution</h2>
+						<p>
+							Because this is my own projects everything is done by me. 
+							the 3D models are also done by me but are mostly placeholder right now as I plan to update them later with better textures
+						</p>
+					
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+						<h2>Implementation</h2>
+						<p>
+							For the overworld map I used the unity tilemap. Normally this module is intended to combine sprites – so it is more of a graphical component.
+							However, with some setup tricks I could use to instantiate prefabs. 
+							I created multiple hex tiles with different objects on them to represent different tiles.
+							Additionally, I also used scriptable objects to assign properties like movement cost to these tiles.
+							to make them clickable I once again utilized the onClick function. A big problem I saw when using the tilemap was the fact,
+							that the unity tilemap does not provide API functions to retrieve tiles and their object from a specific coordinate.
+							I decided to build a custom grid class which saves every tile in the beginning at provides functions to retrieve tiles from specific coordinates. 
+							To enable the player to move to tiles which don’t neighbor the current tile 
+							I implemented pathfinding by implementing the A* start algorithm which is widely used in gaming.
+							To represent the different trade wares, I once again used scriptable objects to determine their base price, 
+							and if they can be used as food for the caravan.
+							Each city has an inventory with certain goods in stock and local price differences between city
+							(a city which produces potatoes is going to offer them much cheaper).  
+							The trading menu is implemented with layout elements to display the different wares and resize the containers accordingly.
+							This interface is displayed can be accessed by another menu which is displayed as soon as the player enters a city which emits an event. 
+							I once again relied heavily on events for this project so far as they have proven useful in a lot of cases. 
+							I even created a dedicated globally accessible event bus function to resolve the dependencies for subscription easily.
+							The game is also in real time and constantly advances time if the player is moving. To achieve this,
+							I created a time class which also rotates the light source suggest a day and night rhythm.
+							These are main mechanics I was able to implement so far, and I am excited to continue working on this project when university break starts, 
+							and I don’t have to work on other assignments anymore.
+							</p>
+						
+					</section>
+					<section id="four">
+						<h2>Links</h2>
+						<p>If you want to check out the code yourself you can use the following link</p>
+						<a href="https://github.com/LennoxCode/Trading-Game" >Github</a>
+						<br>
+						<a href="index.html" >Back</a>
+					</section>
+					<!--
+					<ul class="actions">
+						<li><a href="#" class="button">Learn More</a></li>
+					</ul>	
+					-->
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					
+					<ul class="copyright">
+						<li>&copy; 2022 Leonard Valentin</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
