@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Leonard Valentin</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<!--
+					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<h1><strong>I am Leonard</strong>, 22 year old<br />
+					Computer Science student<br />
+					Passionate about creating games</h1>
+					-->
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>StudyPlan</h1>
+							
+						</header>
+						<h2>Motivation</h2>
+						<p>In the fifth semester I selected a machine learning module. Because I was curious and worried that the course would proof too difficult If I am unprepared, 
+							I decided that I wanted to program my own neural network from scratch. I know that this could be much easier achieved using the TensorFlow library, 
+							but I wanted to understand the theory behind machine learning and understand an intuition before using abstraction.
+						</p>
+						
+					</section>
+
+				<!-- Two -->
+					<section id="two">
+						<h2>My Contribution</h2>
+						<p>Because this was a sole project, I did everything myself and did not use any libraries outside of numpy. 
+							theoretically I could program the required linear algebra myself but by using a hardware accelerated library the training is much faster.
+						</p>
+					
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+						<h2>Implementation</h2>
+						<p>I used a book from the library to help me understand the underlying algorithms. 
+							I started my implementation with a constructor which controls how many inputs, hidden and output-nodes the network has. 
+							I decided to implement a network with only one hidden layer because more hidden layers would lead to possible problems like the vanishing gradient 
+							and one hidden layer is enough for such as simple task. Otherwise, the constructor creates matrices with random values for the forward propagation. 
+							Implementing the forward propagation is straight forward because it is only required to multiply the input matrix with the matrix for the hidden 
+							and output layer and applying the activation function for each node (I used the sigmoid function).
+							An activation function is essential to build a layered network because without a nonlinear function 
+							the network would just be a linear combination of each node which would defeat the purpose.
+							The last and most difficult part of the network implementation is the back propagation algorithm. 
+							To train the network we define a so-called loss function which a lot of the time is just the mean square error. 
+							The goal is to minimize this function which could be normally achieved by calculating the zero value of the second derivate however 
+							a complex function with so many dimensions like a neural network is almost impossible to derive. Thus, 
+							a gradient is used by partially deriving for each node in network and using the chain to rule to back propagate. 
+							The weights are then subtracted by this gradient and the partially derivate is then propagated further back until the input nodes are reached. 
+							This algorithm seemed intimidating at first for me but is much easier to implement than I thought 
+							because it mostly utilizes mathematical rules I learned in high school. afterwards I tweaked the learning rate, 
+							the number of hidden nodes, normalized the inputs and increased the amount of training iterations until the network was saturated.
+							 </p>
+						
+					</section>
+					<section id="four">
+						<h2>Links</h2>
+						<p>If you want to check out the code yourself you can use the following link</p>
+						<a href="https://github.com/modulehandbook/studyplan" >Github</a>
+						<br>
+						<a href="index.html" >Back</a>
+					</section>
+					<!--
+					<ul class="actions">
+						<li><a href="#" class="button">Learn More</a></li>
+					</ul>	
+					-->
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					
+					<ul class="copyright">
+						<li>&copy; 2022 Leonard Valentin</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
