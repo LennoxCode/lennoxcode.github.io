@@ -35,12 +35,8 @@
 							
 						</header>
 						<h2>Motivation</h2>
-						<p>During the fourth semester of my study, it is mandatory to do a practical project. It Counts three times as much as a normal course. 
-							Students can select one of several projects which change each semester and are assigned to a professor to offer guidance and feedback. 
-							I selected the project “better course selection” because I got screwed over by the system in this semester myself. 
-							We got a lot of freedom in how to approach this project just like one would in the real world when working in a company. 
-							After a long time of theory crafting, we settled for two main pillars – implementing a better algorithm when distributing the courses 
-							by allowing prioritization and better usability by introducing drag & drop and making information easily available through modal windows. 
+						<p>
+							In the fourth semester, each student participates in a mandatory team project comprising five to seven members, with the objective of collaboratively developing a functional application. Students choose from a selection of diverse projects, subject to change each semester, and are assigned a dedicated professor to provide guidance and feedback. I elected to contribute to the 'Better Course Selection' project, aiming to enhance the software system responsible for assigning students to courses, prompted by personal challenges encountered within the system. The project provided a substantial degree of autonomy, closely aligning with real-world scenarios. Following extensive research into the current system's challenges, our team focused on two key areas of improvement: refining the course distribution algorithm through a priority system, and enhancing usability through features such as drag-and-drop functionality and user-friendly modal windows
 						</p>
 						
 					</section>
@@ -48,11 +44,8 @@
 				<!-- Two -->
 					<section id="two">
 						<h2>My Contribution</h2>
-						<p>I did a lot of the heavy lifting for this project. During the initial planning stage, I brought up a lot of ideas like the priority system, 
-							the ability for students to select the maximum of courses they want to end up with to limit the possibility that some people is assigned more courses than they want.  
-							In addition, I also implemented the course selection model for the backend, did the first implementation of the front-end interface for the selection, 
-							added a site for teachers to see wo is in their course, and added a survey model to easily decipher why people picked certain courses. Lastly,
-							 I implemented the course assignment algorithm in collaboration with another team member by peer programming. 
+						<p>
+							I played a pivotal role in shaping the project from its inception. During the initial planning phase, I introduced innovative concepts, such as the priority system and the ability for students to set the maximum number of courses, ensuring a more tailored assignment process. Taking charge of the backend, I implemented the course selection model, while also spearheading the initial development of the front-end interface. Additionally, I designed a user-friendly site for teachers to effortlessly access their course information and integrated a survey model to gather insights into students' course preferences. In a collaborative effort, I co-implemented the course assignment algorithm through peer programming, ensuring a robust and efficient solution.The final algorithm significantly improved student satisfaction, achieving an impressive 82% approval in the initial test run. Additionally, it streamlined course assignments, reducing processing time from four weeks to just one. This success led to its adoption for the subsequent semester course assignments.
 						</p>
 					
 					</section>
@@ -60,23 +53,22 @@
 				<!-- Three -->
 					<section id="three">
 						<h2>Implementation</h2>
-						<p>We implemented our project by using the MEVN tech stack which utilizes Vue for the front-end, express and NodeJS for the back-end, and MongoDB for the database. 
-							Vue was the perfect fit because it provided global state and thus reactivity which is very important for a web app which requires drag & drop and thus a constant mutation of data.
-							 In addition, Vue is also easier to learn compared to React which was important because most of our group did not have much experience with JavaScript.
-							  The course selection menu utilizes several linked components which makes reusing them very simple. This was important because each priority row is an independent component. 
-							  If a course is dragged into a priority row another one is automatically instantiated. 
-							  This has the additional benefit of making the priority of each course easily distinguishable and saving the changes to the database. 
-							  The distribution algorithm was realized by utilizing the fact that each JavaScript object is also a dictionary
-							   by creating an object which contains each course as a key and having each priority from one to six as another key inside this object 
-							   and saving each person with their priority to their respective rank in each course. Afterwards each one is shuffled and sorted by priority 
-							   and only the students which the course can contain remain. 
-							   Afterwards a loop removes people from courses with the lowest priority if they have too many courses and redistributes students until saturation is reached.
+						<p>We implemented our project using the MEVN tech stack, leveraging Vue for the front-end, Express and NodeJS for the back-end, and MongoDB for the database. Vue was chosen for its suitability in managing global state, crucial for the reactivity required in a web app with drag & drop functionality. Vue's simplicity was key, especially considering our team's limited experience with JavaScript, making it more accessible than React.
+							<br>
+							<br>
+							The course selection menu efficiently employs linked components, facilitating easy reuse. Each priority row is an independent component, ensuring simple instantiation when a course is dragged. This design not only distinguishes the priority of each course but also enables seamless data mutation and storage.
+							<br>
+							<br>
+							Several MongoDB data models represent our application's data, with the central model being the 'course selection,' where each student has precisely one entry. This model employs key-value pairs, resembling a dictionary, to indicate the selected course and its priority. Users have the flexibility to specify the number of courses they wish to be assigned, preventing potential course access blockages if they already have sufficient courses. The data's validity is dynamically updated with each user modification, and the data's integrity is verified in the backend to ensure consistency.
+							<br>
+							<br>
+							The distribution algorithm operates by utilizing JavaScript objects as dictionaries. Each course serves as a key, with priorities (ranging from one to six) nested within. Simultaneously, each person is associated with their priority in each course. The algorithm then involves shuffling, sorting, and selectively removing individuals based on course capacity. This iterative process continues until course saturation is reached, ensuring a balanced and optimal distribution of students across courses. Utilizing simple data structure operations, such as shuffling and sorting, the algorithm exhibited efficient performance, completing in less than a minute. While further optimizations may be necessary for larger deployments, we prioritized simplicity given the limited number of students at our university
 							 </p>
 						
 					</section>
 					<section id="four">
 						<h2>Links</h2>
-						<p>If you want to check out the code yourself you can use the following link</p>
+						<p>If you would like to review the code personally, please use the following link:</p>
 						<a href="https://github.com/modulehandbook/studyplan" >Github</a>
 						<br>
 						<a href="index.html" >Back</a>
