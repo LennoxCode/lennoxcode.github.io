@@ -35,11 +35,8 @@
 							
 						</header>
 						<h2>Motivation</h2>
-						<p>In the fifth semester I selected a course called “Advanced Game Programming” to better my understanding on how to implement game systems. 
-							For this module we had to create a physics game. Because every team member already had experience with unity decided to increase the scope of the project.
-							 I suggested to center the game around a hook mechanic because I think a hook shot makes every game more fun. 
-							 The aesthetic of the game is centered around the pun of captain and caption thus the player hooks himself to the whole spectrum of captions 
-							 from Instagram to desktop icon captions.
+						<p>
+							In the fifth semester, I enrolled in the 'Advanced Game Programming' course to further  enhance my gameplay programming skills and deepen my understanding of scalable software patterns. The module required us to develop a physics-based game. Building on the team's prior Unity experience, we sought to expand the project's scope. I proposed focusing on a hook mechanic, as I believe a hook shot adds an element of fun to any game. The primary objective was to craft a compelling central gameplay mechanic that, when harmoniously integrated with level design, could yield interesting levels with escalating difficulty. The game's aesthetic revolves around a playful play on words, merging the concepts of 'captain' and 'caption.' Consequently, players hook themselves to a variety of captions, spanning from Instagram to desktop icon captions.
 						</p>
 						
 					</section>
@@ -47,10 +44,8 @@
 				<!-- Two -->
 					<section id="two">
 						<h2>My Contribution</h2>
-						<p>Because there was more initiative from my group members in this project there was not as much of burden put on me. 
-							I implemented the base hook mechanic and the physics used to control the pirate, I also implemented and designed the menu, 
-							added a score system in conjunction with a leaderboard which persists through play sessions, a camera scrolling system, 
-							procedural placement of collectibles and a scene manager which loads levels on demand and cleans up dependencies. I also did a lot of bug-fixing for this project.
+						<p>
+							Due to increased initiative from my group members, the project workload was well-distributed. I took charge of implementing pivotal elements such as the base hook mechanic and the physics governing the pirate's movements. Additionally, I designed and implemented the menu, integrated a score system with a persistent leaderboard, established a camera scrolling system, enabled procedural placement of collectibles, and engineered a scene manager for dynamic level loading. Bug-fixing also fell within my responsibilities, ensuring the project's smooth functionality.
 						</p>
 					
 					</section>
@@ -58,36 +53,23 @@
 				<!-- Three -->
 					<section id="three">
 						<h2>Implementation</h2>
-						<p>I implemented the base mechanic by using another object with a pivot on a player which is rotated based on the mouse position.
-							If the left mouse button is pressed a raycast is shot from the gun object if this raycast hits anything within range the rope of the hook shot is enabled.
-							The rope wase created by using a Springjoint2D which binds to objects together and contracts at a certain adjustable distance threshold. 
-							The distance can be increased and decreased with the left and right mouse button which simulates the effect of pulling in or descending. Additionally, 
-							I also used an animation curve to displace the line segments of an attached line renderer component to add an animation for the rope’s suspension. 
-							This approach had the added benefit that the animation and sprite for the rope could be easily replaced and adjusted.
-							The menu was implemented by using a state machine design pattern. When I coded menus previously I if statements. 
-							this solution is very bad when the game scales and needs more menu screens because each one needs a new if statement and comes with a lot of edge cases. 
-							A state machine eliminates these problems by restricting the menu to be in only one state which can only go to selected states 
-							and thus eliminating a lot of undefined behavior. I defined an interface for the state machine and states, which required overloading 
-							the OnEnter and OnExit functions. By requiring this functionality through an interface, the state machine can execute functionality when changing states 
-							like for example hiding and showing menu screens in a menu state machine. The state machine itself just uses a dictionary with Enums for the states to change between them.
-							Each transition is added before program execution.
-							A lot more boilerplate code is required for this implementation, but the benefits are clear when menus with a lot of screens are needed.
-							To implement the score, I added a timer class to track the time using a coroutine. When finishing the level, 
-							the amount of collected coins are subtracted and the final score is calculated and displayed. 
-							The player can choose to enter his name with an input field and afterwards the score is displayed in a row with the top ten scores. 
-							To implement the score display I once again used layout groups and prefabs for each score row. Up to ten can be displayed and they grow smaller the more exist. 
-							The score is also persistent through play sessions by using saving the name and score together with the place on the scoreboard in playerprefs. 
-							using this solution is very easy because the file I/O is already taken care of. For larger projects where a lot of data must be these scales badly, 
-							and I would choose to do my own I/O using something like a JSON format to save. However, 
-							for only small amounts of data this fine and saves the hassle of worrying about error handling.
-							lastly to resolve dependencies we used a lot of events. This had the added benefit of keeping in line with the singe responsibly paradigm
-							and additionally requires less Null handling. Modelling dependencies through events has a lot of benefits for games.
+						<p>
+							I implemented the foundational mechanics by employing an object with a pivot on the player, rotated based on mouse position. Upon left mouse button press, a raycast is emitted from the gun object. If the ray hits anything within range, the hook shot's rope is enabled. The rope, created using a SpringJoint2D, which binds objects together and contracts at an adjustable distance threshold. This distance is manipulated with the left and right mouse buttons to simulate the effect of pulling in or descending. Additionally, I utilized an animation curve to displace line segments of an attached LineRenderer component, introducing an animation for the rope's suspension. This approach facilitates easy replacement and adjustment of the animation and sprite for the rope.
+							<br>
+							<br>
+							The menu system was implemented using a state machine design pattern. Compared to the previous use of if statements in menu coding, this solution eliminates scalability issues associated with an increasing number of menu screens. A state machine confines the menu to a single state that can only transition to selected states, reducing undefined behavior. I established an interface for the state machine and states, necessitating overloading of the OnEnter and OnExit functions. Enforcing this functionality through an interface enables the state machine to execute actions when changing states, such as hiding and showing menu screens. The state machine itself utilizes a dictionary with Enums for states, with each transition defined before program execution. Despite the increased boilerplate code, the benefits become evident when dealing with menus containing numerous screens.
+							<br>
+							<br>
+							To manage scoring, I introduced a timer class using a coroutine to track time. Upon completing a level, the collected coins are tallied, and the final score is calculated and displayed. Players can input their names through an input field, and the scores are showcased in rows featuring the top ten scores. I employed layout groups and prefabs for score rows, ensuring a dynamic and space-efficient display. Persistent score data is maintained through play sessions via saving the name, score, and place on the scoreboard in PlayerPrefs. While this solution is suitable for small-scale data management, larger projects may warrant custom I/O, such as using a JSON format, to handle increased data complexity. Lastly, to address dependencies, an events-based system was implemented. This not only aligns with the single responsibility paradigm but also minimizes null handling. Leveraging events for modeling dependencies offers several advantages in game development.
+							<br>
+							<br>
+							In conclusion, the strategic application of software patterns and adherence to clean code principles, such as the implementation of events and the state machine, proved instrumental in streamlining the development process of the game. These practices not only fortified the project against scalability challenges but also allowed for the incorporation of a more extensive scope. 
 							 </p>
 						
 					</section>
 					<section id="four">
 						<h2>Links</h2>
-						<p>If you want to check out the code yourself you can use the following link</p>
+						<p>If you would like to review the code personally, please use the following link:</p>
 						<a href="https://github.com/LennoxCode/Hookshot-Game" >Github</a>
 						<br>
 						<a href="index.html" >Back</a>
