@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Leonard Valentin</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<!--
+					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<h1><strong>I am Leonard</strong>, 22 year old<br />
+					Computer Science student<br />
+					Passionate about creating games</h1>
+					-->
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>Tornare</h1>
+							
+						</header>
+						<h2>Motivation</h2>
+						<p>
+							During my internship I worked at Stichting Gamelab Oost. Me and a team of five other people were tasked with creating a promotional game for the Connect-U game situated in Enschede. The building contains the Saxion university, housing, several different offices as well as a meeting area to connect and host events. This structure enables people to meet and profit from the knowledge of each other. Our goal was to promote and emphasize these ideals. We were given a lot of freedom on how to design this game. We thought about creating an interactive tour or storybook but after incorporating client feedback into it we decided a game would be the better choice. We settled relatively early on presenting the game's story as a visual novel, which leads the player through the different aspects of the building. For the gameplay we decided to turn the game into a minigame collection, each representing one aspect of building. living is represented by moving into a student apartment and unpacking various item and putting them into a grid, studying is represented by scheduling courses through clicking them at the right time on a calendar, connecting is done through connecting people on a grid by drawing lines that don't cross and lastly working is representing by a drawing minigame where the player is tasked with drawing different prompts which are guessed by a machine learning model and award points on completion. The game also features a scoring system and a star rating for each of these for levels encouraging replayability. The biggest challenge for the project was incorporating the client feedback into our pitches and selecting the appropriate scope. We were careful in selecting features to put into the game but in the end we could incorporate everything we wanted in our game and had enough time to fix all the bugs resulting in a satisfied client. 
+							<br>
+							<br>
+							During my internship at Stichting Gamelab Oost, I collaborated with a team of five individuals to develop a promotional game for the Connect-U facility in Enschede. This multifaceted space encompasses Saxion University, accommodations, offices, and a communal area for networking and events. Our primary objective was to highlight and promote the collaborative and knowledge-sharing environment fostered within the building. The project afforded us considerable creative freedom, and after thoughtful consideration and incorporating client feedback, we opted for a game format over alternatives like an interactive tour or storybook.
+							<br>
+							<br>
+							Early in our conceptualization, we decided to present the game's narrative as a visual novel, guiding players through various facets of the building. To encapsulate the diverse activities within, we designed the game as a collection of mini-games. These mini-games symbolized different aspects of the building, such as living, studying, connecting, and working. For instance, the living aspect involved a puzzle where players arranged items in a student apartment, while studying required scheduling courses through an interactive calendar. Connecting simulated networking by drawing lines on a grid, and working incorporated an art mini-game where players drew prompts, generating points based on a machine learning model's guesses. The game implemented a scoring system and star ratings, encouraging replayability.
+							<br>
+							<br>
+							Despite the challenges, particularly in incorporating client feedback into our pitches and managing the project scope, we successfully navigated the development process. Careful feature selection allowed us to include all planned elements in the game, and ample time was allocated for bug fixing, ultimately resulting in a satisfied client.
+
+						</p>
+						
+					</section>
+
+				<!-- Two -->
+					<section id="two">
+						<h2>My Contribution</h2>
+						<p>
+							Our team comprised individuals with diverse skill sets, covering art, sound, game design, and programming. Notably, I was one of two programmers, being the sole member with prior experience in Unity. Consequently, I assumed a predominant role in the programming domain, laying the architectural foundation for the game. Leading the development process, I initiated by designing the core architecture and abstraction for the minigames and dialogue system. Following that, I proceeded to implement the minigames in a chronological sequence. I also helped the less experienced team members with onboarding in Unity, developed tooling for the dialogue system and menu animation, and provided support to facilitate further iterations.
+							<br>
+							<br>
+							Among the challenges encountered, the drawing game posed the most complexity, necessitating the integration of a machine learning model. This involved downloading, cleaning and manipulating data, iterating its size and structure to optimize the model, and ultimately deploying it successfully. Additionally, I collaborated with a teammate in Figma to design an aesthetically pleasing and responsive interface, seamlessly integrating it into Unity along with animations. While my primary focus was programming, I also had the opportunity to contribute to game and interface design, adding an extra layer of engagement to the project.
+						</p>
+					
+					</section>
+
+				<!-- Three -->
+					<section id="three">
+						<h2>Implementation</h2>
+						<p>
+							The project was executed using an event-driven architecture. Each minigame derives from an abstract base class, incorporating functions and events for starting, ending, and score calculation. Upon completion, the game emits an event, signaling a GameManager class to proceed with the dialogue. This architectural approach facilitates the easy implementation of new minigames, as all elements related to time display and scene management are handled in the GameManager class, adhering to the single responsibility principle. The use of abstract functions creates the possibility for an empty minigame to load the next scene or dialogue, crucial for scenes without an associated minigame, such as the introduction or credits. This design aligns with the command software pattern, aiding in the implementation and modification of minigames without disrupting other functionalities. For a more extensive project, the utilization of the factory pattern could enhance ease of creating instances of specific minigame classes using an enum, simplifying minigame swaps in the editor.
+							<br>
+							<br>
+							The implementation of the first minigame involved creating a scalable grid with line renderers for display and object prefabs with invisible offset game objects representing their occupied space. Touch controls, provided by Unity, allowed players to pick up objects. Upon placement, each game object inside the prefab snapped to the nearest grid point, with further calculations to check occupancy. If any conditions failed, the object returned to the inventory. After successful placements, the grid checked if it was full, signaling the player's victory. The primary challenge lay in managing the rotation of prefabs, their grid positions, and proper cleanup after player interactions.
+							<br>
+							<br>
+							The second minigame was fully implemented in the UI, utilizing layout elements evenly spaced in the schedule. Courses randomly appeared in these elements, with three courses selected at the beginning of the game for players to click on. As the courses appeared, they shrank and eventually disappeared. Points were awarded based on the player's speed in clicking on the correct courses. Scriptable objects represented the courses, each with a name and icon, utilizing the OnClick event to disappear after being clicked. This minigame was relatively straightforward to implement, with the main challenge lying in the design and ensuring an enjoyable player experience.
+							<br>
+							<br>
+							The third minigame also utilized a grid, reusing much of the functionality from the first game, as the grid and game functionalities were separated. The objective was to connect all people in the same-colored bubble by drawing lines. If everyone was connected, and each grid point filled, the player won the game. Touch controls allowed the player to tap on a character, filling every grid point hovered over by the player afterwards, and reversing the action if clicked again. A simpler line renderer was used to display the lines. Overall, this game was also straightforward to implement, due to the reuse of functionality from the first game.
+							<br>
+							<br>
+							The drawing minigame posed the most significant implementation challenge. Real-time functionality and dynamic rendering were crucial aspects of its complexity. I addressed this by utilizing a simple texture and capturing coordinates when the player touched the screen. If the coordinates aligned with the texture. The process of training the machine learning model presented its own set of challenges. The original data was stored as a series of coordinates representing strokes, necessitating unpacking and transformation into normal rasterized grayscale images for enhanced performance through matrix operations. Given the dataset's substantial size of over 200GB, careful multithreading, splitting into smaller sub-datasets, and compression were also essential to enable the data to be loaded onto the GPU. The network was implemented with the TensorFlow library, choosing a convolutional neural network for its suitability in image recognition. The final hurdle involved deploying the model in our mobile game. Despite initial challenges with different inference libraries, I discovered a Unity package that streamlined the deployment process. The model achieved an 85% accuracy rate in the top three guesses, providing satisfactory performance. It demonstrated proficiency in interpreting even crude and abstract drawings, displaying commendable generalization.
+							<br>
+							<br>
+							Lastly, the interface was implemented using the state machine I previously developed during the "Advanced Game Programming" course, proving to be particularly invaluable for integrating an interface into such a sizable project. I introduced functions in the OnStateEnter and OnStateExit phases to facilitate UI animations, executed through LeanTween. Another crucial consideration in UI implementation was responsiveness, given our mobile platform delivery. This necessitated extensive use of Layout groups to ensure effective scaling.
+							<br>
+							<br>
+							In conclusion, this project has significantly contributed to my practical experience and underscored the importance of clean code and software design patterns. The successful expansion of the project's scope and its subsequent release would not have been possible without adhering to these principles.
+
+							 </p>
+						
+					</section>
+					<section id="four">
+						<h2>Links</h2>
+						<p>If you would like to review the code personally, please use the following link:</p>
+						<a href="https://github.com/LennoxCode/Hookshot-Game" >Github</a>
+						<br>
+						<a href="index.html" >Back</a>
+					</section>
+					<!--
+					<ul class="actions">
+						<li><a href="#" class="button">Learn More</a></li>
+					</ul>	
+					-->
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					
+					<ul class="copyright">
+						<li>&copy; 2022 Leonard Valentin</li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
