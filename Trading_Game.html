@@ -35,10 +35,8 @@
 							
 						</header>
 						<h2>Motivation</h2>
-						<p>Because I very much enjoy game making especially with unity, I wanted to start a project myself to work on when 
-							I don’t have much to for university or during the semester break. 
-							I decided that I wanted to create a strategy game which involves trading because 
-							I enjoy this type of game myself and can imagine how one should play. 
+						<p>
+							I thoroughly enjoy game development, particularly with Unity. To occupy my time during breaks or when coursework is light, I've started a personal project—a strategy game with a focus on trading. This game will involve traversing a strategic map, buying and selling goods that vary in price based on location to turn a profit. I'm drawn to this genre due to my personal interest in strategic management games, and I was also determined to incorporate a procedural map generation algorithm to increase variety, a topic that greatly intrigues me.
 						</p>
 						
 					</section>
@@ -47,9 +45,7 @@
 					<section id="two">
 						<h2>My Contribution</h2>
 						<p>
-							Because this is my own projects everything is done by me. 
-							the 3D models are also done by me but are mostly placeholder right now as I plan to update them later with better textures
-						</p>
+							As this is a personal project, I am responsible for all aspects, including the creation of 3D models. Currently, the 3D models serve as placeholders, and I intend to update them with improved textures in subsequent iterations.
 					
 					</section>
 
@@ -57,33 +53,29 @@
 					<section id="three">
 						<h2>Implementation</h2>
 						<p>
-							For the overworld map I used the unity tilemap. Normally this module is intended to combine sprites – so it is more of a graphical component.
-							However, with some setup tricks I could use to instantiate prefabs. 
-							I created multiple hex tiles with different objects on them to represent different tiles.
-							Additionally, I also used scriptable objects to assign properties like movement cost to these tiles.
-							to make them clickable I once again utilized the onClick function. A big problem I saw when using the tilemap was the fact,
-							that the unity tilemap does not provide API functions to retrieve tiles and their object from a specific coordinate.
-							I decided to build a custom grid class which saves every tile in the beginning at provides functions to retrieve tiles from specific coordinates. 
-							To enable the player to move to tiles which don’t neighbor the current tile 
-							I implemented pathfinding by implementing the A* start algorithm which is widely used in gaming.
-							To represent the different trade wares, I once again used scriptable objects to determine their base price, 
-							and if they can be used as food for the caravan.
-							Each city has an inventory with certain goods in stock and local price differences between city
-							(a city which produces potatoes is going to offer them much cheaper).  
-							The trading menu is implemented with layout elements to display the different wares and resize the containers accordingly.
-							This interface is displayed can be accessed by another menu which is displayed as soon as the player enters a city which emits an event. 
-							I once again relied heavily on events for this project so far as they have proven useful in a lot of cases. 
-							I even created a dedicated globally accessible event bus function to resolve the dependencies for subscription easily.
-							The game is also in real time and constantly advances time if the player is moving. To achieve this,
-							I created a time class which also rotates the light source suggest a day and night rhythm.
-							These are main mechanics I was able to implement so far, and I am excited to continue working on this project when university break starts, 
-							and I don’t have to work on other assignments anymore.
+							For the overworld map, I employed the Unity Tilemap module, primarily designed for combining sprites, and creatively configured it to instantiate prefabs. Using multiple hex tiles with distinct objects, each representing different tiles, I utilized Scriptable Objects to assign properties such as movement cost and the produced ressources. interactivity was achieved through the onClick function and events.
+							<br>
+							<br>
+							One notable challenge arose with the Unity Tilemap's lack of API functions for retrieving tiles and their objects from specific coordinates. To address this, I crafted a custom grid class during the initial phase, storing every tile and providing functions for coordinate-based retrieval.
+							<br>
+							<br>
+							Pathfinding was implemented using the A* algorithm to enable player movement to non-neighboring tiles and find the shortest possible path. To represent various trade wares, Scriptable Objects were once again employed for defining base prices and determining whether they can serve as food for the caravan. I prefer using Scriptable Objects to separate data from functionality, as they facilitate the easy creation of new trading objects.
+							<br>
+							<br>
+							Each city offers an inventory with specific goods and local price variations, adding strategic depth to the trading system. The inventory is serializable, allowing for adjustments to price variations in the Unity editor. The trading menu, implemented through layout elements, ensures correct scaling by adjusting container sizes based on the number of wares offered. This interface is accessed through another menu triggered by a city entry event.
+							<br>
+							<br>
+							The implementation heavily leans on events enhancing code scalability and simplifying the resolution of dependencies. A dedicated globally accessible event bus class, utilizing the singleton pattern, facilitates easy subscription handling. The game operates in real-time, advancing time continuously as the player moves. To achieve this, a time class was created, incorporating a day-and-night rhythm indicated by a rotating light source.
+							<br>
+							<br>
+							These are the primary mechanics implemented thus far, and I eagerly anticipate developing it further in the future. 
+
 							</p>
 						
 					</section>
 					<section id="four">
 						<h2>Links</h2>
-						<p>If you want to check out the code yourself you can use the following link</p>
+						<p>If you would like to review the code personally, please use the following link:</p>
 						<a href="https://github.com/LennoxCode/Trading-Game" >Github</a>
 						<br>
 						<a href="index.html" >Back</a>
